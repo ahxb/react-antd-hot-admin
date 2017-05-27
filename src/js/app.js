@@ -53,10 +53,10 @@ class App extends Component {
                                 <Menu.Item key="5">Team 2</Menu.Item>
                             </SubMenu>
                             <Menu.Item key="6">
-              <span>
-                <Icon type="file"/>
-                <span className="nav-text">File</span>
-              </span>
+                                  <span>
+                                    <Icon type="file"/>
+                                    <span className="nav-text">File</span>
+                                  </span>
                             </Menu.Item>
                         </Menu>
                     </Sider>
@@ -68,7 +68,7 @@ class App extends Component {
                                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
                             </Breadcrumb>
                             <div style={{padding: 24, background: '#fff', minHeight: 360}}>
-                                Bill is a cat.
+                            11111111111111
                             </div>
                         </Content>
                         <Footer style={{textAlign: 'center'}}>
