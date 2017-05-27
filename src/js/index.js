@@ -2,7 +2,7 @@ import 'react-hot-loader/patch';
 import React from 'react';
 import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 import RootContainer from './app';
 
 const render = Component => {
