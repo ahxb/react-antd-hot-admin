@@ -7,12 +7,12 @@ module.exports = {
         "react-hot-loader/patch",
         "webpack-dev-server/client?http://localhost:5000",
         "webpack/hot/only-dev-server",
-        "./src/js/index.js"
+        "./src/entry/index.js"
     ],
 
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'js/bundle.js',
+        filename: 'entry/bundle.js',
         publicPath: '/'
     },
 
