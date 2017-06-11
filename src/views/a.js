@@ -3,28 +3,36 @@ import {Button} from 'antd';
 import {Progress} from 'antd';
 import '../css/app.css';
 import {Layout, Menu, Breadcrumb, Icon} from 'antd';
-const {Header, Content, Footer, Sider} = Layout;
-const SubMenu = Menu.SubMenu;
+
+import Aa from './aa';
+
 
 class a extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            data:0,
             collapsed: false,
             mode: 'inline',
         }
     }
 
-
+    childleo(){
+        let self=this;
+        this.setState({
+            data:this.state.data+1,
+        })
+        console.log(this.state.data);
+    }
 
     render() {
         let logo = '';
 
         return (
             <div >
-                <Button>dfsd</Button>
-似的发射点发生地方11111111111111111111111
-
+                <Button>{this.state.data}</Button>
+                    {/*name 传的字符串  child 传的方法用于子组件修改父组件的state状态*/}
+                    <Aa name="leo" child={this.childleo.bind(this)}>1</Aa>
             </div>
         );
     }

@@ -7,7 +7,7 @@ import {
     Link
 } from 'react-router-dom'
 import App from '../entry/app';
-import a from '../views/a';
+
 
 
 // const validate = function (next, replace, callback) {
