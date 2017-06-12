@@ -12,7 +12,7 @@ import * as actions from '../actions';
 
 import {bindActionCreators} from 'redux';
 
-class a extends Component {
+class b extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,11 +25,12 @@ class a extends Component {
     }
 
     add(){
-
+        //调用action里面的add方法
         this.props.acs.add();
     }
 
     jian(){
+        //调用action里面的jian方法
         this.props.acs.jian();
     }
 
@@ -56,7 +57,7 @@ class a extends Component {
 
 function state2props (state) {
     return {
-        xxx: state.app
+        xxx: state.reducer
     }
 }
 function action2props (dispatch) {
@@ -67,4 +68,4 @@ function action2props (dispatch) {
         acs: boundActionCreators
     }
 }
-export default connect(state2props,action2props)(a);
+export default connect(state2props,action2props)(b);

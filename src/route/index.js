@@ -19,7 +19,7 @@ import App from '../entry/app';
 //   callback()
 // }
 //
-import configStore from '../configStore';
+import configStore from '../reducer';
 const store = configStore();
 
 

@@ -37,13 +37,13 @@ class f extends Component {
 
 function state2props (state) {
     return {
-        xxx: state.app
+        xxx: state.reducer
     }
 }
-function action2props (dispatch) {
-    const boundActionCreators = bindActionCreators(actions, dispatch);
-    return {
-        acs: boundActionCreators
-    }
-}
-export default connect(state2props,action2props)(f);
+// function action2props (dispatch) {
+//     const boundActionCreators = bindActionCreators(actions, dispatch);
+//     return {
+//         acs: boundActionCreators
+//     }
+// }
+export default connect(state2props)(f);

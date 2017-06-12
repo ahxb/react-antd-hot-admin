@@ -4,7 +4,7 @@ import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 // import 'antd/dist/antd.css';
 //路由
-import RootContainer from '../route/index';
+import RouteIndex from '../route/index';
 import '../css/app.css';
 const render = Component => {
     ReactDom.render(
@@ -15,8 +15,8 @@ const render = Component => {
     );
 }
 
-render(RootContainer);
+render(RouteIndex);
 
 if (module.hot) {
-    module.hot.accept('../route/index', () => { render(RootContainer) });
+    module.hot.accept('../route/index', () => { render(RouteIndex) });
 }
