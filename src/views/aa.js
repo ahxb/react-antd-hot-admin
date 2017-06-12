@@ -10,7 +10,7 @@ class aa extends Component {
         super(props);
         this.state = {
             collapsed: false,
-            mode: 'inline',
+            dataaaa: 'hahahhahaha',
         }
     }
 
@@ -20,7 +20,7 @@ class aa extends Component {
         // console.log(this.props.child);
 
         //获取父组件的方法
-        this.props.child()
+        this.props.child(this.state.dataaaa)
     }
 
     render() {

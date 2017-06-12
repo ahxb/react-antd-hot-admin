@@ -51,6 +51,9 @@ class Sidebar extends Component {
                         <Menu.Item key="3">
                             <Link to="/b">b</Link>
                         </Menu.Item>
+                        <Menu.Item key="4">
+                            <Link to="/f">f</Link>
+                        </Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="sub2"

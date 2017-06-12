@@ -17,12 +17,12 @@ class a extends Component {
         }
     }
 
-    childleo(){
+    childleo(data){
         let self=this;
         this.setState({
             data:this.state.data+1,
         })
-        console.log(this.state.data);
+        console.log(11,data);
     }
 
     render() {

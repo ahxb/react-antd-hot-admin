@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Router, Route, browserHistory, IndexRoute,hashHistory } from 'react-router'
 import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
 import {
     BrowserRouter as Router,
     Route,
@@ -18,17 +19,20 @@ import App from '../entry/app';
 //   callback()
 // }
 //
-
+import configStore from '../configStore';
+const store = configStore();
 
 
 class routes extends React.Component {
     render () {
         return (
+        <Provider store={store}>
             <Router>
                 <Route path="/" component={App}>
 
                 </Route>
             </Router>
+        </Provider>
         )
     }
 }

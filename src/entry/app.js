@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom'
 import a from '../views/a';
 import b from '../views/b';
+import f from '../views/f';
 import Sidebar from '../components/Sider/sider';
 
 
@@ -52,6 +53,7 @@ class App extends Component {
                                 <Route exact path="/" component={a}/>
                                 <Route path="/a" component={a}/>
                                 <Route path="/b" component={b}/>
+                                <Route path="/f" component={f}/>
                             </div>
                         </Content>
                         <Footer style={{textAlign: 'center'}}>
