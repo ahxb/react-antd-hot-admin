@@ -63,9 +63,14 @@ class Sidebar extends Component {
                         <Menu.Item   key="5">
                             <Link to="/smzq">生命周期</Link>
                         </Menu.Item>
-                        <Menu.Item key="6">Team 2</Menu.Item>
+                        <Menu.Item key="6">
+                            <Link to="/tjx">条件渲染和简单组件</Link>
+                        </Menu.Item>
+                        <Menu.Item key="7">
+                            <Link to="/zhorjc">组合与继承</Link>
+                        </Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="6">
+                    <Menu.Item key="8">
                                   <span>
                                     <Icon type="file"/>
                                     <span className="nav-text">File</span>
