@@ -16,6 +16,13 @@ class a extends Component {
             arr:[
                 {name: 'abc'}
             ],
+            json:{
+                a:{
+                    b:2
+                },
+                c:0
+
+            }
         }
     }
 
@@ -35,12 +42,25 @@ class a extends Component {
         this.setState({arr:  arr});
     }
     clickarr(){
+        //先把数组拷贝出来在 setstate 更新视图
         let  arr = this.state.arr.slice();
         this.setState({
             data:this.state.data+1,
         })
         arr.push({name: 'ccc'+this.state.data});
         this.setState({arr:  arr});
+
+    }
+    clickJson(){
+        //先把json拷贝出来在 setstate 更新视图
+        let json2=Object.assign({},this.state.json.a);
+        json2.b=99;
+        this.setState({
+            json:{
+                a:json2
+            }
+        })
+
 
     }
     render() {
@@ -62,8 +82,13 @@ class a extends Component {
                     <Col span={3}>
 
                         <Button onClick={this.clickarr.bind(this)}>{this.state.data}</Button>
+
                         {/*name 传的字符串  child 传的方法用于子组件修改父组件的state状态*/}
                         <Aa name="leo" child={this.childleo.bind(this)}>1</Aa>
+
+                        {/*json操作*/}
+                        <Button onClick={this.clickJson.bind(this)}>json操作</Button>
+                        <div>{this.state.json.a.b} </div>
                     </Col>
                 </Row>
 
