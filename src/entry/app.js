@@ -13,6 +13,7 @@ import {
 import a from '../views/a';
 import b from '../views/b';
 import f from '../views/f';
+import smzq from '../views/smzq';
 import Sidebar from '../components/Sider/sider';
 
 
@@ -49,11 +50,12 @@ class App extends Component {
                                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
                             </Breadcrumb>
                             <div style={{padding: 24, background: '#fff', minHeight: 360}}>
-                                {/*4.0渲染方式*/}
+                                {/*4.0渲染方式 path是路由地址  component是加载的组件*/}
                                 <Route exact path="/" component={a}/>
                                 <Route path="/a" component={a}/>
                                 <Route path="/b" component={b}/>
                                 <Route path="/f" component={f}/>
+                                <Route path="/smzq" component={smzq}/>
                             </div>
                         </Content>
                         <Footer style={{textAlign: 'center'}}>

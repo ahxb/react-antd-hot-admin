@@ -60,8 +60,10 @@ class Sidebar extends Component {
                         title={<span><Icon type="team"/><span className="nav-text">Team</span></span>}
                     >
                         {/*<RouteLink to="/rgb" className="list-group-item">bbbbbbbbbbb</RouteLink>*/}
-                        <Menu.Item to="/a" key="4">Team 1</Menu.Item>
-                        <Menu.Item key="5">Team 2</Menu.Item>
+                        <Menu.Item   key="5">
+                            <Link to="/smzq">生命周期</Link>
+                        </Menu.Item>
+                        <Menu.Item key="6">Team 2</Menu.Item>
                     </SubMenu>
                     <Menu.Item key="6">
                                   <span>
