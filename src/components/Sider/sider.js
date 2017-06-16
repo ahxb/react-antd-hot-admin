@@ -70,11 +70,13 @@ class Sidebar extends Component {
                             <Link to="/zhorjc">组合与继承</Link>
                         </Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="8">
+                    <Menu.Item key="19">
+
                                   <span>
                                     <Icon type="file"/>
-                                    <span className="nav-text">File</span>
+                                         <Link to="/aiyukeyumaoqiu">爱羽客羽毛球</Link>
                                   </span>
+
                     </Menu.Item>
                 </Menu>
             </Sider>

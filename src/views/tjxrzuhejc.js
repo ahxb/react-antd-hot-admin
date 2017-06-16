@@ -22,7 +22,20 @@ class a extends Component {
             collapsed:!this.state.collapsed
         })
     }
+    clickTen2(){
+
+    }
+    getIsComplete(){
+        if(this.state.collapsed){
+            return '111111'
+        }else{
+            return '22222'
+        }
+
+    }
     render() {
+
+        let staring = this.getIsComplete()
 
         return (
             <div >
@@ -30,6 +43,10 @@ class a extends Component {
 
                 <Button onClick={this.clickTen.bind(this)}>按钮</Button>
 
+
+                {/*根据state状态返回值*/}
+                <Button onClick={this.clickTen.bind(this)}>按钮2</Button>
+                <div>{staring}</div>
             </div>
         );
     }
@@ -37,7 +54,7 @@ class a extends Component {
 
 export default a;
 
-
+//定义组件的最简单的方法是编写一个JavaScript函数：
 function Greeting(props) {
     const isLoggedIn = props.isLoggedIn;
     if (isLoggedIn) {
@@ -45,7 +62,7 @@ function Greeting(props) {
     }
     return <GuestGreeting />;
 }
-//定义组件的最简单的方法是编写一个JavaScript函数：
+
 function UserGreeting(props) {
     return <h1>Welcome back!</h1>;
 }

@@ -16,6 +16,7 @@ import f from '../views/f';
 import smzq from '../views/smzq';
 import tjx from '../views/tjxrzuhejc';
 import zhorjc from '../views/zhorjc';
+import aiyukeyumaoqiu from '../views/aiyukeyumaoqiu';
 import Sidebar from '../components/Sider/sider';
 
 
@@ -60,6 +61,7 @@ class App extends Component {
                                 <Route path="/smzq" component={smzq}/>
                                 <Route path="/tjx" component={tjx}/>
                                 <Route path="/zhorjc" component={zhorjc}/>
+                                <Route path="/aiyukeyumaoqiu" component={aiyukeyumaoqiu}/>
                             </div>
                         </Content>
                         <Footer style={{textAlign: 'center'}}>

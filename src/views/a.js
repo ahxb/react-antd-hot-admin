@@ -67,10 +67,13 @@ class a extends Component {
         let logo = '',arr=this.state.arr;
         let list = [];
 
-        for (var i = 0; i<arr.length; i++) {
-            list.push(<li key={i} onClick={this.click.bind(this,i)}>{arr[i].name}</li>)
-
-        }
+        // for (var i = 0; i<arr.length; i++) {
+        //     list.push(<li key={i} onClick={this.click.bind(this,i)}>{arr[i].name}</li>)
+        //
+        // }
+        arr.forEach((item,i)=>{
+            list.push(<li key={i} onClick={this.click.bind(this,i)}>{item.name}</li>)
+        })
         return (
             <div >
                 <Row>
