@@ -19,12 +19,13 @@ import App from '../entry/app';
 //   callback()
 // }
 //
-import configStore from '../reducer';
-const store = configStore();
+
 
 
 class routes extends React.Component {
     render () {
+        const { store, history } = this.props;
+
         return (
         <Provider store={store}>
             <Router>

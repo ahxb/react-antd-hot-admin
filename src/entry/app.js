@@ -11,7 +11,7 @@ import {
     Link
 } from 'react-router-dom'
 import a from '../views/a';
-import b from '../views/b';
+import redux from '../views/redux';
 import f from '../views/f';
 import smzq from '../views/smzq';
 import tjx from '../views/tjxrzuhejc';
@@ -55,7 +55,7 @@ class App extends Component {
                                 {/*4.0渲染方式 path是路由地址  component是加载的组件*/}
                                 <Route exact path="/" component={a}/>
                                 <Route path="/a" component={a}/>
-                                <Route path="/b" component={b}/>
+                                <Route path="/redux" component={redux}/>
                                 <Route path="/f" component={f}/>
                                 <Route path="/smzq" component={smzq}/>
                                 <Route path="/tjx" component={tjx}/>

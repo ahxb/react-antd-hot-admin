@@ -14,22 +14,30 @@ class a extends Component {
             collapsed: false,
             mode: 'inline',
 
+         }
     }
 
-
-
-
+    clickTen(){
+        this.setState({
+            collapsed:!this.state.collapsed
+        })
     }
     render() {
 
         return (
             <div >
-                <Greeting isLoggedIn={true} />,
+                <Greeting isLoggedIn={this.state.collapsed} />
+
+                <Button onClick={this.clickTen.bind(this)}>按钮</Button>
 
             </div>
         );
     }
 }
+
+export default a;
+
+
 function Greeting(props) {
     const isLoggedIn = props.isLoggedIn;
     if (isLoggedIn) {
@@ -43,6 +51,5 @@ function UserGreeting(props) {
 }
 
 function GuestGreeting(props) {
-    return <h1>Please sign up.</h1>;
+    return <h1>Please sign up.111</h1>;
 }
-export default a;

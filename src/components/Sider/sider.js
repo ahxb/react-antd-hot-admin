@@ -49,7 +49,7 @@ class Sidebar extends Component {
                             <Link to="/a">a</Link>
                         </Menu.Item>
                         <Menu.Item key="3">
-                            <Link to="/b">b</Link>
+                            <Link to="/redux">redux</Link>
                         </Menu.Item>
                         <Menu.Item key="4">
                             <Link to="/f">f</Link>
