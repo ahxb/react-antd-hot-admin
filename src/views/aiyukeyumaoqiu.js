@@ -3,8 +3,9 @@ import {Button} from 'antd';
 import {Progress} from 'antd';
 import '../css/ai.scss';
 import {Layout, Menu, Breadcrumb, InputNumber , Icon,Collapse ,Row, Col } from 'antd';
-import List from './badminton/list'
-// import goodsData from './goodsData';
+
+
+import Panl from './badminton/panl'
 
 
 class ai extends Component {
@@ -13,41 +14,84 @@ class ai extends Component {
         this.state = {
             collapsed: false,
             arr:[
-                 {
-                     id:1,
-                     chick:true,
-                     unitPrice:639,
-                     totalPrice:639,
-                     img:'/static/1.png',
-                    inventory:9,
-                    name:'王者之剑1',
-                    package:"套餐B",
-                     number:1,
-                 },
-                {
-                    id:2,
-                    chick:true,
-                    unitPrice:1600,
-                    totalPrice:1600,
-                    img:'/static/2.png',
-                    inventory:30,
-                    name:'王者之剑2',
-                    package:"套C",
-                    number:1,
-                },
-            ]
+                    [
+                        {
+                            store:'a',
+                            id:1,
+                            chick:true,
+                            unitPrice:639,
+                            totalPrice:639,
+                            img:'/static/1.png',
+                            inventory:58,
+                            name:'王者之剑1',
+                            package:"套餐B",
+                            number:1,
+                        },
+                        {
+                            store:'a',
+                            id:2,
+                            chick:true,
+                            unitPrice:1600,
+                            totalPrice:1600,
+                            img:'/static/2.png',
+                            inventory:90,
+                            name:'王者之剑2',
+                            package:"套C",
+                            number:1,
+                        },
+                    ],[
 
+                        {
+                            store:'b',
+                            id:3,
+                            chick:true,
+                            unitPrice:2333,
+                            totalPrice:2333,
+                            img:'/static/1.png',
+                            inventory:80,
+                            name:'王者之剑1',
+                            package:"套餐B",
+                            number:1,
+                        },
+                        {
+                            store:'b',
+                            id:4,
+                            chick:true,
+                            unitPrice:1111,
+                            totalPrice:1111,
+                            img:'/static/2.png',
+                            inventory:60,
+                            name:'王者之剑2',
+                            package:"套C",
+                            number:1,
+                        },
+                    ],[
 
+                        {
+                            store:'c',
+                            id:5,
+                            chick:true,
+                            unitPrice:222,
+                            totalPrice:222,
+                            img:'/static/1.png',
+                            inventory:88,
+                            name:'王者之剑1',
+                            package:"套餐B",
+                            number:1,
+                        },
+                    ],
+            ],
 
         }
     }
 
 
-    change(id,val){
+    change(id,val,index){
+
+        console.log(111,id,val,index);
 
 
-
-        let nextArr = this.state.arr.map(item=>{
+        let nextArr = this.state.arr[index].map(item=>{
                 if(item.id === id ){
                     return {...item, number: val, totalPrice: item.unitPrice * val}
                 }else{
@@ -55,43 +99,58 @@ class ai extends Component {
                 }
         });
 
+        let newArr=[...this.state.arr];
+        newArr[index]=nextArr;
+
         this.setState({
-            arr: nextArr
+            arr: newArr
         })
 
     }
-    chickOnchange(id){
-        let nextArr = this.state.arr.map(item=>{
+    chickOnchange(id,index){
+
+        let nextArr = this.state.arr[index].map(item=>{
             if(item.id === id ){
                 return {...item, chick: !item.chick}
             }else{
                 return item
             }
         });
+        let newArr=[...this.state.arr];
+        newArr[index]=nextArr;
 
         this.setState({
-            arr: nextArr
+            arr: newArr
         })
 
     }
+    sumit(){
+        console.log('提交ajax',this.state.arr);
+    }
+
     render() {
         let arrList=[],money=[],sum=0,num=[],mumSum=0;
-        // const selNum = this.state.selNum;
+        let panlArr=[];
+
+
 
         this.state.arr.forEach((item,i)=>{
-            arrList.push(<List key={i} data={item}  child={this.change.bind(this)} chickOnchange={this.chickOnchange.bind(this)}/>);
-            if(item.chick){
-                money.push(item.totalPrice);
-                num.push(item.number);
-            }
+            panlArr.push(<Panl  key={i} data={item} index={i} child={this.change.bind(this)} chickOnchange={this.chickOnchange.bind(this)}/>);
+
+            item.forEach((res,i)=>{
+
+                    if(res.chick){
+                        money.push(res.totalPrice);
+                        num.push(res.number);
+                    }
+            })
         });
+
 
         if(money.length>0){
             money.forEach((item)=>{
                 sum+=item
-            })
-        }
-        if(num.length>0){
+            });
             num.forEach((item)=>{
                 mumSum+=item
             })
@@ -100,22 +159,13 @@ class ai extends Component {
         return (
             <div className="ai">
 
-                <div className="ai-box">
-                    <div className="header">
-                        <Row>
-                            <Col offset={1} span={11}>本商品不限购</Col>
-                            <Col span={12} className="red">在本处&nbsp;显示本组商品的&nbsp;总价&nbsp;运费&nbsp;信息</Col>
-                        </Row>
-                    </div>
-                    <div className="ai-body">
 
-                        {arrList}
-                    </div>
-                </div>
+                {panlArr}
+
 
                 <div className="ai-botton">
                     <Row className="ai-b-height" type="flex"   align="middle">
-                        <Col offset={18} span={3}>
+                        <Col offset={16} span={4}>
                             <div>
                                 共<span className="red">&nbsp;{mumSum}&nbsp;</span>件商品，总价
                                 <span className="red font-size">￥{sum}</span>
@@ -125,7 +175,7 @@ class ai extends Component {
                             </div>
                         </Col>
                         <Col  span={2}>
-                            <Button type="primary" className="backgroundred">去结算</Button>
+                            <Button type="primary" onClick={this.sumit.bind(this)} className="backgroundred">去结算</Button>
                         </Col>
                     </Row>
                 </div>

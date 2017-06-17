@@ -21,13 +21,12 @@ class b extends Component {
             mode: 'inline',
         }
 
-        this.add = this.add.bind(this);
-        this.jian = this.jian.bind(this);
     }
 
     add(){
         //调用action里面的add方法
         this.props.reduxFangfa.add();
+
     }
 
     jian(){
@@ -38,12 +37,13 @@ class b extends Component {
 
 
     render() {
-        let logo = '';
+
+        console.log(1111,this.props);
 
         return (
             <div >
-                <Button onClick={this.add}>加</Button>
-                <Button onClick={this.jian}>减</Button>
+                <Button onClick={this.add.bind(this)}>加</Button>
+                <Button onClick={this.jian.bind(this)}>减</Button>
              
              
              

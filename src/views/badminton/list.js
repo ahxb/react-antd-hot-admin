@@ -4,6 +4,8 @@ import React, {Component} from 'react';
 import {Layout, Menu, Breadcrumb, InputNumber , Icon,Collapse ,Row, Col } from 'antd';
 
 
+
+
 class list extends Component {
     constructor(props) {
         super(props);
@@ -14,11 +16,12 @@ class list extends Component {
 
 
     numOnChange(id,value){
+        this.props.child(id,value,this.props.index);
 
-        this.props.child(id,value)
+
     }
     checkOnchange(id){
-        this.props.chickOnchange(id);
+        this.props.chickOnchange(id,this.props.index);
     }
     render() {
 
@@ -32,7 +35,7 @@ class list extends Component {
                     <Col offset={1}  span={1}>
                         <input type="checkbox" checked={props.chick} onChange={this.checkOnchange.bind(this,props.id)}/>
                     </Col>
-                    <Col span={1}  >
+                    <Col span={2}  >
 
                         <img src={props.img} className="ai-img"  alt=""/>
 

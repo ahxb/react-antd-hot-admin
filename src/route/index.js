@@ -24,6 +24,7 @@ import App from '../entry/app';
 
 class routes extends React.Component {
     render () {
+        console.log(333,this.props);
         const { store, history } = this.props;
 
         return (

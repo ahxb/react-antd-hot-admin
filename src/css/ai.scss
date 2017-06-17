@@ -14,6 +14,8 @@
 
   .ai-box{
     border: 1px solid #ccc;
+    margin-top: 20px;
+
     .header{
       background-color: #ccc;
       height: 30px;
@@ -21,7 +23,7 @@
 
     }
     .ai-body{
-      height: 300px;
+      //height: 300px;
 
 
       .ai-list{
@@ -34,8 +36,7 @@
         .ai-img{
           height: 50px;
           width: 50px;
-          //background: url("../img/1.png") no-repeat;
-          //background-size: 100% 100%;
+
         }
 
         .flex-top{

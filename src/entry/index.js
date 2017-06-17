@@ -6,6 +6,7 @@ import { AppContainer } from 'react-hot-loader';
 
 //redux store 热加载
 import configStore from '../reducer';
+// import configStore from '../views/badminton/badmintonRedux/reducer';
 const store = configStore();
 //路由
 import RouteIndex from '../route/index';
