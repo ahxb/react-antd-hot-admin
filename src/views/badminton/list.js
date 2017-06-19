@@ -6,7 +6,7 @@ import {Button,Layout, Menu, Breadcrumb, InputNumber , Icon,Collapse ,Row, Col }
 //链接redux
 import { connect } from 'react-redux';
 
-import * as actions from '../../actions';
+import * as actions from '../actions/actions';
 
 import {bindActionCreators} from 'redux';
 

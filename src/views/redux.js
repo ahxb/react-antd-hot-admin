@@ -9,7 +9,7 @@ const SubMenu = Menu.SubMenu;
 //链接redux
 import { connect } from 'react-redux';
 
-import * as actions from '../actions';
+import * as actions from './actions/actions';
 
 import {bindActionCreators} from 'redux';
 
@@ -58,7 +58,7 @@ class b extends Component {
 //显示rexux状态
 function state2props (state) {
     return {
-        xxx: state.readd
+        xxx: state.app.readd
     }
 }
 //发送 更改状态

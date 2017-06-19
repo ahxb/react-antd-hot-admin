@@ -5,7 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 // import 'antd/dist/antd.css';
 
 //redux store 热加载
-import configStore from '../reducer';
+import configStore from '../views/reducer';
 // import configStore from '../views/badminton/badmintonRedux/reducer';
 const store = configStore();
 //路由

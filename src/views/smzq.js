@@ -7,7 +7,7 @@ import {Layout, Menu, Breadcrumb, Icon} from 'antd';
 
 import { connect } from 'react-redux';
 
-import * as actions from '../actions';
+import * as actions from './actions/actions';
 
 import {bindActionCreators} from 'redux';
 

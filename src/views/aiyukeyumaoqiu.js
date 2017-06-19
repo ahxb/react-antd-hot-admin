@@ -8,7 +8,7 @@ import {Layout, Menu, Breadcrumb, InputNumber , Icon,Collapse ,Row, Col } from '
 import Panl from './badminton/panl'
 
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from './actions/actions';
 
 import {bindActionCreators} from 'redux';
 
@@ -207,7 +207,7 @@ class ai extends Component {
 function state2props (state) {
     return {
         //这里是reducer的名字
-        chick: state.common
+        chick: state.app.yumaoqiu
     }
 }
 
