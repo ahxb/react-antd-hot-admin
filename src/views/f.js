@@ -37,7 +37,7 @@ class f extends Component {
 
 function state2props (state) {
     return {
-        xxx: state.reducer
+        xxx: state.readd
     }
 }
 // function action2props (dispatch) {

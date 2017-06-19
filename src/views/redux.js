@@ -58,7 +58,7 @@ class b extends Component {
 //显示rexux状态
 function state2props (state) {
     return {
-        xxx: state.reducer
+        xxx: state.readd
     }
 }
 //发送 更改状态

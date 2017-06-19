@@ -7,6 +7,8 @@ import {
     Route,
     Link
 } from 'react-router-dom'
+import { connect } from 'react-redux';
+
 class Sidebar extends Component {
     constructor(props) {
         super(props);
@@ -15,6 +17,18 @@ class Sidebar extends Component {
             mode: 'inline',
         }
     }
+
+    componentWilReceiveProps(nextProps) {
+        if (nextProps.common.xxxTrigger !== this.props.common.xxxTrigger) {
+            console.log('xxx id will chang...', this.props.common.xxxId, nextProps.common.xxxId);
+        }
+    }
+
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (prevProps.common.xxxTrigger !== this.props.common.xxxTrigger) {
+    //         console.log('xxx id changed...', this.props.common.xxxId);
+    //     }
+    // }
 
     onCollapse(collapsed) {
         console.log(collapsed);
@@ -87,4 +101,11 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+function mapStateToProps(state) {
+    return {
+        common: state.common
+    };
+}
+export default connect(mapStateToProps)(Sidebar);
+
+// export default Sidebar;

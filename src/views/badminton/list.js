@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
 
 
-import {Layout, Menu, Breadcrumb, InputNumber , Icon,Collapse ,Row, Col } from 'antd';
+import {Button,Layout, Menu, Breadcrumb, InputNumber , Icon,Collapse ,Row, Col } from 'antd';
 
+//链接redux
+import { connect } from 'react-redux';
 
+import * as actions from '../../actions';
+
+import {bindActionCreators} from 'redux';
 
 
 class list extends Component {
@@ -16,13 +21,15 @@ class list extends Component {
 
 
     numOnChange(id,value){
-        this.props.child(id,value,this.props.index);
-
+        // this.props.child(id,value,this.props.index);
+        this.props.reduxFangfa.numOnChange(id,value,this.props.index);
 
     }
     checkOnchange(id){
-        this.props.chickOnchange(id,this.props.index);
+        this.props.reduxFangfa.chickOnchange(id,this.props.index);
+        // this.props.chickOnchange(id,this.props.index);
     }
+
     render() {
 
         let props=this.props.data;
@@ -31,6 +38,8 @@ class list extends Component {
 
         return (
             <div className="ai-list">
+
+
                 <Row className="ai-list-height" type="flex"   align="middle">
                     <Col offset={1}  span={1}>
                         <input type="checkbox" checked={props.chick} onChange={this.checkOnchange.bind(this,props.id)}/>
@@ -74,4 +83,18 @@ class list extends Component {
     }
 }
 
-export default list;
+// export default list;
+
+
+//发送 更改状态
+function action2props (dispatch) {
+    //import * as actions from '../actions';
+    //bindActionCreators其实就是把多个action还是用dispatch调用
+    const boundActionCreators = bindActionCreators(actions, dispatch);
+    return {
+        reduxFangfa: boundActionCreators
+    }
+}
+//发送 更改状态 前面必须要有 //显示rexux状态
+
+export default connect(null, action2props)(list);

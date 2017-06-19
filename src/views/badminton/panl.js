@@ -16,16 +16,13 @@ class panl extends Component {
     numchange(id,val,index){
         this.props.child(id,val,index);
     }
-    chickOnchange(id,index){
-        // console.log(id,index);
-        this.props.chickOnchange(id,index);
-    }
+
     render() {
         let arrList=[];
 
         if(this.props.data.length>0){
             this.props.data.forEach((item,i)=>{
-                arrList.push(<List key={i} data={item} index={this.props.index}  child={this.numchange.bind(this)} chickOnchange={this.chickOnchange.bind(this)} />);
+                arrList.push(<List key={i} data={item} index={this.props.index}  child={this.numchange.bind(this)}   />);
             });
 
         }

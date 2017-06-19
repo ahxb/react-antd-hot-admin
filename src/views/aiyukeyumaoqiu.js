@@ -7,6 +7,11 @@ import {Layout, Menu, Breadcrumb, InputNumber , Icon,Collapse ,Row, Col } from '
 
 import Panl from './badminton/panl'
 
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+
+import {bindActionCreators} from 'redux';
+
 
 class ai extends Component {
     constructor(props) {
@@ -85,10 +90,23 @@ class ai extends Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState){
 
+        //勾选
+        if (prevProps.chick.chickTrigger!==this.props.chick.chickTrigger ) {
+
+            this.chickOnchange(this.props.chick.chickID,this.props.chick.chickIndex);
+        };
+
+        //数量变化
+        if(prevProps.chick.numVAL!==this.props.chick.numVAL ){
+
+            this.change(this.props.chick.numID,this.props.chick.numVAL,this.props.chick.numI);
+        }
+    }
     change(id,val,index){
 
-        console.log(111,id,val,index);
+        // console.log(111,id,val,index);
 
 
         let nextArr = this.state.arr[index].map(item=>{
@@ -135,7 +153,7 @@ class ai extends Component {
 
 
         this.state.arr.forEach((item,i)=>{
-            panlArr.push(<Panl  key={i} data={item} index={i} child={this.change.bind(this)} chickOnchange={this.chickOnchange.bind(this)}/>);
+            panlArr.push(<Panl  key={i} data={item} index={i}     />);
 
             item.forEach((res,i)=>{
 
@@ -184,4 +202,13 @@ class ai extends Component {
     }
 }
 
-export default ai;
+// export default ai;
+
+function state2props (state) {
+    return {
+        //这里是reducer的名字
+        chick: state.common
+    }
+}
+
+export default connect(state2props)(ai);
