@@ -1,0 +1,64 @@
+.ai{
+
+  .backgroundred{
+    padding: 0 50px;
+    background-color: red;
+  }
+  .red{
+    color: red;
+  }
+  .font-size{
+    font-size: 16px;
+  }
+
+
+  .ai-box{
+    border: 1px solid #ccc;
+    margin-top: 20px;
+
+    .header{
+      background-color: #ccc;
+      height: 30px;
+      line-height: 30px;
+
+    }
+    .ai-body{
+      //height: 300px;
+
+
+      .ai-list{
+
+        border-bottom: 1px solid #ccc;
+        .ai-list-height{
+
+          height: 100px;
+        }
+        .ai-img{
+          height: 50px;
+          width: 50px;
+
+        }
+
+        .flex-top{
+          align-self: flex-start;
+        }
+
+
+        .shoushi{
+          cursor:pointer;
+        }
+      }
+    }
+  }
+
+
+  .ai-botton{
+    margin-top:30px ;
+
+    border: 1px solid #ccc;
+
+    .ai-b-height{
+      height: 100px;
+    }
+  }
+}

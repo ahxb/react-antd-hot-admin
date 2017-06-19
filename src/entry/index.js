@@ -3,20 +3,25 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 // import 'antd/dist/antd.css';
+
+//redux store 热加载
+import configStore from '../reducer';
+// import configStore from '../views/badminton/badmintonRedux/reducer';
+const store = configStore();
 //路由
-import RootContainer from '../route/index';
+import RouteIndex from '../route/index';
 import '../css/app.css';
 const render = Component => {
     ReactDom.render(
-        <AppContainer>
-            <Component />
+        <AppContainer >
+            <Component  store={store}/>
         </AppContainer>,
         document.getElementById('root')
     );
 }
 
-render(RootContainer);
+render(RouteIndex);
 
 if (module.hot) {
-    module.hot.accept('../route/index', () => { render(RootContainer) });
+    module.hot.accept('../route/index', () => { render(RouteIndex) });
 }

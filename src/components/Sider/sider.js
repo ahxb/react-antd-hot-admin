@@ -49,7 +49,10 @@ class Sidebar extends Component {
                             <Link to="/a">a</Link>
                         </Menu.Item>
                         <Menu.Item key="3">
-                            <Link to="/b">b</Link>
+                            <Link to="/redux">redux</Link>
+                        </Menu.Item>
+                        <Menu.Item key="4">
+                            <Link to="/f">f</Link>
                         </Menu.Item>
                     </SubMenu>
                     <SubMenu
@@ -57,14 +60,23 @@ class Sidebar extends Component {
                         title={<span><Icon type="team"/><span className="nav-text">Team</span></span>}
                     >
                         {/*<RouteLink to="/rgb" className="list-group-item">bbbbbbbbbbb</RouteLink>*/}
-                        <Menu.Item to="/a" key="4">Team 1</Menu.Item>
-                        <Menu.Item key="5">Team 2</Menu.Item>
+                        <Menu.Item   key="5">
+                            <Link to="/smzq">生命周期</Link>
+                        </Menu.Item>
+                        <Menu.Item key="6">
+                            <Link to="/tjx">条件渲染和简单组件</Link>
+                        </Menu.Item>
+                        <Menu.Item key="7">
+                            <Link to="/zhorjc">组合与继承</Link>
+                        </Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="6">
+                    <Menu.Item key="19">
+
                                   <span>
                                     <Icon type="file"/>
-                                    <span className="nav-text">File</span>
+                                         <Link to="/aiyukeyumaoqiu">爱羽客羽毛球</Link>
                                   </span>
+
                     </Menu.Item>
                 </Menu>
             </Sider>

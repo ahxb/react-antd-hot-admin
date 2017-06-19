@@ -11,7 +11,13 @@ import {
     Link
 } from 'react-router-dom'
 import a from '../views/a';
-import b from '../views/b';
+import redux from '../views/redux';
+import f from '../views/f';
+import smzq from '../views/smzq';
+import tjx from '../views/tjxrzuhejc';
+import zhorjc from '../views/zhorjc';
+import aiyukeyumaoqiu from '../views/aiyukeyumaoqiu';
+
 import Sidebar from '../components/Sider/sider';
 
 
@@ -19,20 +25,25 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            collapsed: false,
+            mode: 'inline',
         }
     }
 
-    componentDidMount(){
-        // $("#aaa").css("background","#000")
+    onCollapse(collapsed) {
+        console.log(collapsed);
+        this.setState({
+            collapsed,
+            mode: collapsed ? 'vertical' : 'inline',
+        });
     }
+
     render() {
         let logo = '';
 
-
         return (
             <div className="App">
-                <Layout className="ant-layout-has-sider main">
+                <Layout className="ant-layout-has-sider">
                     {/*侧边栏*/}
                     <Sidebar/>
                     <Layout>
@@ -42,11 +53,16 @@ class App extends Component {
                                 <Breadcrumb.Item>User</Breadcrumb.Item>
                                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
                             </Breadcrumb>
-                            <div id="aaa" style={{padding: 24, background: '#fff', minHeight: 800}}>
-                                {/*4.0渲染方式*/}
+                            <div style={{padding: 24, background: '#fff', minHeight: 360}}>
+                                {/*4.0渲染方式 path是路由地址  component是加载的组件*/}
                                 <Route exact path="/" component={a}/>
                                 <Route path="/a" component={a}/>
-                                <Route path="/b" component={b}/>
+                                <Route path="/redux" component={redux}/>
+                                <Route path="/f" component={f}/>
+                                <Route path="/smzq" component={smzq}/>
+                                <Route path="/tjx" component={tjx}/>
+                                <Route path="/zhorjc" component={zhorjc}/>
+                                <Route path="/aiyukeyumaoqiu" component={aiyukeyumaoqiu}/>
                             </div>
                         </Content>
                         <Footer style={{textAlign: 'center'}}>
