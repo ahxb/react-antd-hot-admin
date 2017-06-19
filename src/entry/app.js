@@ -19,25 +19,20 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            collapsed: false,
-            mode: 'inline',
+
         }
     }
 
-    onCollapse(collapsed) {
-        console.log(collapsed);
-        this.setState({
-            collapsed,
-            mode: collapsed ? 'vertical' : 'inline',
-        });
+    componentDidMount(){
+        // $("#aaa").css("background","#000")
     }
-
     render() {
         let logo = '';
 
+
         return (
             <div className="App">
-                <Layout className="ant-layout-has-sider">
+                <Layout className="ant-layout-has-sider main">
                     {/*侧边栏*/}
                     <Sidebar/>
                     <Layout>
@@ -47,7 +42,7 @@ class App extends Component {
                                 <Breadcrumb.Item>User</Breadcrumb.Item>
                                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
                             </Breadcrumb>
-                            <div style={{padding: 24, background: '#fff', minHeight: 360}}>
+                            <div id="aaa" style={{padding: 24, background: '#fff', minHeight: 800}}>
                                 {/*4.0渲染方式*/}
                                 <Route exact path="/" component={a}/>
                                 <Route path="/a" component={a}/>

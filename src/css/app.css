@@ -17,3 +17,6 @@
 .App .ant-layout-sider-collapsed .ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
     display: none;
 }
+.App .main{
+    height: 1000px!important;
+}

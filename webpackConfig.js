@@ -42,10 +42,7 @@ module.exports = {
                 test: /\.css$/,
                 loaders: ['style-loader', 'css-loader',"sass-loader"]
             },
-            // {
-            //     test: /\.less$/,
-            //     loaders: ['style-loader', 'css-loader',"less-loader"]
-            // },
+
             {
                 test: /\.(png|jpg|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'url-loader?limit=512&&name=image/[name].[ext]?[hash]'

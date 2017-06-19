@@ -22,7 +22,7 @@ const BasicExample = () => (
     22222222222
     </div>
 
-            {/*<Route path="/topics" component={Topics}/>*/}
+            {/*<Route path="/topics" plug={Topics}/>*/}
         </div>
     </Router>
 )
@@ -60,7 +60,7 @@ const About = () => (
 //             </li>
 //         </ul>
 //
-//         <Route path={`${match.url}/:topicId`} component={Topic}/>
+//         <Route path={`${match.url}/:topicId`} plug={Topic}/>
 //         <Route exact path={match.url} render={() => (
 //             <h3>Please select a topic.</h3>
 //         )}/>
