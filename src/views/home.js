@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button} from 'antd';
 import {Progress} from 'antd';
-import '../css/app.css';
+import '../css/boxdiv.scss';
 import {Layout, Menu, Breadcrumb, Icon} from 'antd';
 
 
@@ -12,7 +12,7 @@ import * as actions from './actions/actions';
 import {bindActionCreators} from 'redux';
 
 
-class f extends Component {
+class home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,8 +27,24 @@ class f extends Component {
         let logo = '';
 
         return (
-            <div >
-              fffffffffffffff  <div>{this.props.xxx}</div>
+            <div className="boxdiv">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>22</div>
+                <div>       {this.props.xxx}</div>
+
+
             </div>
         );
     }
@@ -46,4 +62,4 @@ function state2props (state) {
 //         acs: boundActionCreators
 //     }
 // }
-export default connect(state2props)(f);
+export default connect(state2props)(home);

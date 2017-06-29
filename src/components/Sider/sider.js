@@ -57,7 +57,7 @@ class Sidebar extends Component {
                         title={<span><Icon type="user"/><span className="nav-text">User</span></span>}
                     >
                         <Menu.Item key="1">
-                            <Link to="/">Home</Link>
+                            <Link to="/home">Home</Link>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <Link to="/a">a</Link>
@@ -82,6 +82,9 @@ class Sidebar extends Component {
                         </Menu.Item>
                         <Menu.Item key="7">
                             <Link to="/zhorjc">组合与继承</Link>
+                        </Menu.Item>
+                        <Menu.Item key="8">
+                            <Link to="/table">table</Link>
                         </Menu.Item>
                     </SubMenu>
                     <Menu.Item key="19">

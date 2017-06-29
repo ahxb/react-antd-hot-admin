@@ -16,7 +16,9 @@ import f from '../views/f';
 import smzq from '../views/smzq';
 import tjx from '../views/tjxrzuhejc';
 import zhorjc from '../views/zhorjc';
+import home from '../views/home';
 import aiyukeyumaoqiu from '../views/aiyukeyumaoqiu';
+import table from '../views/table';
 
 import Sidebar from '../components/Sider/sider';
 
@@ -50,19 +52,21 @@ class App extends Component {
                         <Header style={{background: '#ccc', padding: 0}}/>
                         <Content style={{margin: '0 16px'}}>
                             <Breadcrumb style={{margin: '12px 0'}}>
-                                <Breadcrumb.Item>User</Breadcrumb.Item>
-                                <Breadcrumb.Item>Bill</Breadcrumb.Item>
+                                <Breadcrumb.Item>yang</Breadcrumb.Item>
+                                <Breadcrumb.Item>leo</Breadcrumb.Item>
                             </Breadcrumb>
                             <div style={{padding: 24, background: '#fff', minHeight: 360}}>
                                 {/*4.0渲染方式 path是路由地址  component是加载的组件*/}
                                 <Route exact path="/" component={a}/>
                                 <Route path="/a" component={a}/>
+                                <Route path="/home" component={home}/>
                                 <Route path="/redux" component={redux}/>
                                 <Route path="/f" component={f}/>
                                 <Route path="/smzq" component={smzq}/>
                                 <Route path="/tjx" component={tjx}/>
                                 <Route path="/zhorjc" component={zhorjc}/>
                                 <Route path="/aiyukeyumaoqiu" component={aiyukeyumaoqiu}/>
+                                <Route path="/table" component={table}/>
                             </div>
                         </Content>
                         <Footer style={{textAlign: 'center'}}>
