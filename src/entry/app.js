@@ -11,6 +11,7 @@ import {
     Link
 } from 'react-router-dom'
 import a from '../views/a';
+import aa from '../views/aa';
 import redux from '../views/redux';
 import f from '../views/f';
 import smzq from '../views/smzq';
@@ -19,6 +20,9 @@ import zhorjc from '../views/zhorjc';
 import home from '../views/home';
 import aiyukeyumaoqiu from '../views/aiyukeyumaoqiu';
 import table from '../views/table';
+import tableAjax from '../views/tableAjax';
+import Modal from '../views/Modal';
+import myModal from '../views/Modal/mymodal';
 
 import Sidebar from '../components/Sider/sider';
 
@@ -59,6 +63,7 @@ class App extends Component {
                                 {/*4.0渲染方式 path是路由地址  component是加载的组件*/}
                                 <Route exact path="/" component={a}/>
                                 <Route path="/a" component={a}/>
+                                <Route path="/aa" component={aa}/>
                                 <Route path="/home" component={home}/>
                                 <Route path="/redux" component={redux}/>
                                 <Route path="/f" component={f}/>
@@ -67,6 +72,9 @@ class App extends Component {
                                 <Route path="/zhorjc" component={zhorjc}/>
                                 <Route path="/aiyukeyumaoqiu" component={aiyukeyumaoqiu}/>
                                 <Route path="/table" component={table}/>
+                                <Route path="/tableAjax" component={tableAjax}/>
+                                <Route path="/Modal" component={Modal}/>
+                                <Route path="/myModal" component={myModal}/>
                             </div>
                         </Content>
                         <Footer style={{textAlign: 'center'}}>

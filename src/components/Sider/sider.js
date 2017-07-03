@@ -62,6 +62,9 @@ class Sidebar extends Component {
                         <Menu.Item key="2">
                             <Link to="/a">a</Link>
                         </Menu.Item>
+                        <Menu.Item key="10">
+                            <Link to="/aa">function</Link>
+                        </Menu.Item>
                         <Menu.Item key="3">
                             <Link to="/redux">redux</Link>
                         </Menu.Item>
@@ -85,6 +88,15 @@ class Sidebar extends Component {
                         </Menu.Item>
                         <Menu.Item key="8">
                             <Link to="/table">table</Link>
+                        </Menu.Item>
+                        <Menu.Item key="9">
+                            <Link to="/tableAjax">tableAjax</Link>
+                        </Menu.Item>
+                        <Menu.Item key="11">
+                            <Link to="/Modal">Modal</Link>
+                        </Menu.Item>
+                        <Menu.Item key="12">
+                            <Link to="/myModal">myModal</Link>
                         </Menu.Item>
                     </SubMenu>
                     <Menu.Item key="19">

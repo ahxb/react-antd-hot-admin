@@ -14,13 +14,15 @@ class aa extends Component {
         }
     }
 
+    fun(){
+       this.leo='yang';
+       this.mumu='lin';
+       return this.leo
+    }
     click(){
-        //获取父组件的属性
-        // console.log(this.props.name);
-        // console.log(this.props.child);
-
-        //获取父组件的方法
-        this.props.child(this.state.dataaaa)
+      this.fun(this.leo=111)
+       // leo.leo=111;
+      console.log(this.fun());
     }
 
     render() {
@@ -28,8 +30,7 @@ class aa extends Component {
 
         return (
             <div >
-                <Button onClick={this.click.bind(this)}>aaaaaa</Button>
-              11
+                <Button onClick={this.click.bind(this)}>function</Button>
 
             </div>
         );

@@ -1,63 +1,13 @@
 import React, {Component} from 'react';
 import {Button} from 'antd';
 import {Progress} from 'antd';
-
+import EditableCell from './dell'
+import  './table.scss';
 import {Table, Layout, Menu, Breadcrumb, Icon,Popconfirm,Input} from 'antd';
 
-//编辑取消
-class EditableCell extends Component{
-    state = {
-        value: this.props.value,
-        editable: false,
-    }
-    handleChange  (e)  {
-        const value = e.target.value;
-        this.setState({ value });
-    }
-    check  ()  {
-        this.setState({ editable: false });
-        if (this.props.onChange) {
-            this.props.onChange(this.state.value);
-        }
-    }
-    edit  ()  {
-        this.setState({ editable: true });
-    }
-    render() {
-        const { value, editable } = this.state;
-        return (
-            <div className="editable-cell">
-                {
-                    editable ?
-                        <div className="editable-cell-input-wrapper">
-                            <Input
-                                value={value}
-                                onChange={this.handleChange.bind(this)}
-                                onPressEnter={this.check.bind(this)}
-                            />
-                            <Icon
-                                type="check"
-                                className="editable-cell-icon-check"
-                                onClick={this.check.bind(this)}
-                            />
-                        </div>
-                        :
-                        <div className="editable-cell-text-wrapper">
-                            {value || ' '}
-                            <Icon
-                                type="edit"
-                                className="editable-cell-icon"
-                                onClick={this.edit.bind(this)}
-                            />
-                        </div>
-                }
-            </div>
-        );
-    }
-}
 
 
-//编辑组件
+//表单
 class EditableTable extends Component{
     constructor(props) {
         super(props);
@@ -66,26 +16,43 @@ class EditableTable extends Component{
             title: 'name',
             dataIndex: 'name',
             width: '30%',
-            //这里的render 返回当前行的只 和 下标
+            className:'textcenter',
+            //这里的render text 当前内容 record 当前行全部内容 index 下标
+            //参数分别为当前行的值，当前行数据，行索引
             render: (text, record, index) => {
-                console.log('xxx', text, record, index);
+
 
                 return (
+                    //编辑组件
                     <EditableCell
                         value={text}
-                        onChange={this.onCellChange(index, 'name')}
+                        onChange={this.onCellChange.bind(this,index, 'name')}
                     />
                 );
             },
         }, {
             title: 'age',
             dataIndex: 'age',
+            className:'textcenter',
+        }, {
+            title: 'sex',
+            dataIndex: 'sex',
+            className:'textcenter',
+            render(text, record, index){
+                if(text==1){
+                    return '男人'
+                }else if(text==2){
+                    return '女人'
+                }
+            }
         }, {
             title: 'address',
             dataIndex: 'address',
+            className:'textcenter',
         }, {
             title: 'operation',
             dataIndex: 'operation',
+            className:'textcenter',
             //这里的render 返回当前行的只 和 下标
             render: (text, record, index) => {
 
@@ -107,11 +74,13 @@ class EditableTable extends Component{
                 key: '0',
                 name: 'Edward King 0',
                 age: '32',
+                sex:'1',
                 address: 'London, Park Lane no. 0',
             }, {
                 key: '1',
                 name: 'Edward King 1',
                 age: '32',
+                sex:'2',
                 address: 'London, Park Lane no. 1',
             }],
             count: 2,
@@ -120,10 +89,11 @@ class EditableTable extends Component{
     cancel(){
         console.log('我取消了');
     }
-    onCellChange(index, key)  {
+    onCellChange(index, name)  {
+
         return (value) => {
             const dataSource = [...this.state.dataSource];
-            dataSource[index][key] = value;
+            dataSource[index][name] = value;
             this.setState({ dataSource });
         };
     }
@@ -189,7 +159,7 @@ class aa extends Component {
 
 
         return (
-            <div>
+            <div className="tablecss">
                 <EditableTable />
             </div>
         );
