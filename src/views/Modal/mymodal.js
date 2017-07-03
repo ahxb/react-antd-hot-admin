@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './modal.scss';
 import {Button} from 'antd';
-import Modal from '../../utils/modal'
+import Modal from '../../utils/modal/index'
 
 class mymodal extends Component {
     constructor(props) {
@@ -14,9 +14,11 @@ class mymodal extends Component {
     click(){
         this.setState({
             collapsed: true,
+        },function () {
+            console.log(this.state.collapsed);
         })
 
-        console.log(this.state.collapsed);
+
     }
 
     render() {

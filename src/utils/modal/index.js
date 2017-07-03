@@ -13,10 +13,11 @@ class mymodal extends Component {
     }
     componentWillReceiveProps( nextProps){
 
-        let visible=this.props.visible
+        let visible=nextProps.visible;
         this.setState({
             switch: visible,
         })
+        console.log(111,visible);
     }
     cell(){
         this.setState({
@@ -24,11 +25,11 @@ class mymodal extends Component {
         })
     }
     down(e){
-
-        let width=e.clientX-this.refs.modal.offsetLeft;
-        let height=e.clientY-this.refs.modal.offsetTop;
-
         let md = this.refs.modal;
+        let width=e.clientX-md.offsetLeft;
+        let height=e.clientY-md.offsetTop;
+
+
 
 
         $(md).on('mousemove',function (evt) {
@@ -46,10 +47,7 @@ class mymodal extends Component {
         })
     }
 
-    up(e){
-        e.preventDefault();
-        e.stopPropagation();
-    }
+
     render() {
         return (
             <div className="modal">
@@ -66,7 +64,7 @@ class mymodal extends Component {
                                         <div
                                             className="ant-modal-header"
                                             onMouseDown={this.down.bind(this)}
-                                            onMouseUp={this.up.bind(this)}
+
 
                                         >移动的modal</div>
                                         <div className="ant-modal-body ">
