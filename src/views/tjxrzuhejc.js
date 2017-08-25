@@ -33,6 +33,20 @@ class a extends Component {
         }
 
     }
+    clickAjax(){
+        $.ajax({
+            url: 'http://rapapi.org/mockjsdata/23415/api/creations',
+            type:    'get',
+            dataType:   'json',
+
+            success:function(res){
+                console.log(111,res);
+            },
+            error:function(res){
+
+            }
+        });
+    }
     render() {
 
         let staring = this.getIsComplete()
@@ -47,6 +61,8 @@ class a extends Component {
                 {/*根据state状态返回值*/}
                 <Button onClick={this.clickTen.bind(this)}>按钮2</Button>
                 <div>{staring}</div>
+
+                <Button onClick={this.clickAjax.bind(this)}>ajax</Button>
             </div>
         );
     }

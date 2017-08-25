@@ -13,14 +13,35 @@ class a extends Component {
             data:0,
             collapsed: false,
             mode: 'inline',
+            user:''
 
         }
     }
+    changeinout(e){
+        this.setState({
+            user:e.target.value
+        })
+    }
+
+    componentDidMount() {
+        this.setState({})
+    }
+
+
+
     render() {
 
         return (
             <div >
                 <WelcomeDialog></WelcomeDialog>
+
+                <br/>
+                <br/>
+                <input type="text" value={this.state.user||'请输入'}    onChange={this.changeinout.bind(this)}/>
+
+
+                <br/>
+                <h1> {this.state.user}</h1>
 
             </div>
         );

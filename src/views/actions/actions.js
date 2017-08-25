@@ -1,3 +1,4 @@
+//actions可以传值 比如 id index  val 什么的
 export function add() {
     return {
         type: 'ADD'

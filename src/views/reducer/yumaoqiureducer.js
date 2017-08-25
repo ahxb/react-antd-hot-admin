@@ -10,6 +10,7 @@ const initialState = {
 
 }
 
+//这里接受action 传过来的值 id val data什么的
 function commonReducer (state = initialState, action) {
     switch (action.type) {
 
