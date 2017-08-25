@@ -95,8 +95,11 @@ class Sidebar extends Component {
                         <Menu.Item key="11">
                             <Link to="/Modal">Modal</Link>
                         </Menu.Item>
-                        <Menu.Item key="12">
+                        <Menu.Item key="13">
                             <Link to="/myModal">myModal</Link>
+                        </Menu.Item>  
+                        <Menu.Item key="12">
+                            <Link to="/Fetch">Fetch</Link>
                         </Menu.Item>
                     </SubMenu>
                     <Menu.Item key="19">

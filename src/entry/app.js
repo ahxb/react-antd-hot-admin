@@ -25,6 +25,7 @@ import Modal from '../views/Modal';
 import myModal from '../views/Modal/mymodal';
 
 import Sidebar from '../components/Sider/sider';
+import Fetch from '../views/fetch';
 
 
 class App extends Component {
@@ -75,6 +76,7 @@ class App extends Component {
                                 <Route path="/tableAjax" component={tableAjax}/>
                                 <Route path="/Modal" component={Modal}/>
                                 <Route path="/myModal" component={myModal}/>
+                                <Route path="/Fetch" component={Fetch}/>
                             </div>
                         </Content>
                         <Footer style={{textAlign: 'center'}}>
