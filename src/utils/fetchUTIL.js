@@ -13,4 +13,16 @@ request.get = function (url, params) {
     }).then (response => response.json ())
 }
 
+request.post = function (url, body) {
+
+    return fetch (url, {
+        mode: "cors",
+        method: 'POST',
+        header: {
+            'Accept': 'application/json',
+            'creations': 'application/json',
+        },
+        body: JSON.stringify (body)
+    }).then (response => response.json ())
+}
 export default request;

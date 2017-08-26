@@ -8,18 +8,28 @@ class Fetch extends Component {
         super(props);
         this.state = {
             collapsed: false,
-            dataaaa: 'hahahhahaha',
+            getData: '',
+            postData:'',
         }
     }
     _fetchget(){
-        UTIL.get('http://127.0.0.1:3003/string',{
+        UTIL.fget('http://127.0.0.1:3003/getA',{
             name:'leo'
         }).then(data=>{
-                console.log(11111111,data)
+                console.log(11111111,data);
+                this.setState({getData:data.data.num})
         })
     }
     _fetchpost(){
-        console.log(22);
+        UTIL.fpost('http://127.0.0.1:3003/postA',{
+            name:'leo',
+            data:10000,
+        }).then(data=>{
+            console.log(2222,data);
+            this.setState({
+                postData:data.data.num
+            })
+        })
     }
     render() {
         let logo = '';
@@ -30,13 +40,13 @@ class Fetch extends Component {
                     <Col span={6} className="border">
                         <Button onClick={this._fetchget.bind(this)}>fetchGet</Button>
                         <div>
-                            fetchGet数据
+                            fetchGet数据---{this.state.getData||'数据还没来'}
                         </div>
                     </Col>
                     <Col span={6} className="border">
                         <Button onClick={this._fetchpost.bind(this)}>fetchPost</Button>
                         <div>
-                            fetchPost数据
+                            fetchPost数据---{this.state.postData||'数据还没来'}
                         </div>
                     </Col>
                 </Row>
