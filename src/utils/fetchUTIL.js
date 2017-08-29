@@ -15,14 +15,17 @@ request.get = function (url, params) {
 
 request.post = function (url, body) {
 
+    let myHeaders = new Headers({
+        'Accept': 'application/json',
+        "Content-Type": "application/json",
+    });
+
     return fetch (url, {
         mode: "cors",
         method: 'POST',
-        header: {
-            'Accept': 'application/json',
-            'creations': 'application/json',
-        },
+        headers: myHeaders,
         body: JSON.stringify (body)
+        // body: body
     }).then (response => response.json ())
 }
 export default request;

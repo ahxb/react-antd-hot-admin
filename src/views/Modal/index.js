@@ -53,13 +53,13 @@ class modal extends React.Component {
                 <Button type="primary" onClick={this.showModal}>Open</Button>
                 <Modal
                     title="leo Modal"
-                    visible={this.state.visible}
+                    visible={this.props.visible}
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
                     onClick={this.click.bind(this)}
                 >
                     <p>  <Button type="primary" onClick={this.showModal2}>Open2222</Button></p>
-                    <p>Some contents...</p>
+                    <p>Some contents...111</p>
                     <p  >Some contents...</p>
                 </Modal>
 

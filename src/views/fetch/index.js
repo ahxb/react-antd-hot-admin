@@ -23,7 +23,7 @@ class Fetch extends Component {
     _fetchpost(){
         UTIL.fpost('http://127.0.0.1:3003/postA',{
             name:'leo',
-            data:10000,
+            data:'10000',
         }).then(data=>{
             console.log(2222,data);
             this.setState({

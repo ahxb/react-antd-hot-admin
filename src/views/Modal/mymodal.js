@@ -25,7 +25,7 @@ class mymodal extends Component {
         return (
             <div>
 
-                <Button className='button' onClick={this.click.bind(this)}>modalmove</Button>
+                <Button className='button' onClick={this.click.bind(this)}>modalmove111</Button>
 
                 <Modal visible={this.state.collapsed}/>
 
