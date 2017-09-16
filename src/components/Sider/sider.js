@@ -101,6 +101,9 @@ class Sidebar extends Component {
                         <Menu.Item key="12">
                             <Link to="/Fetch">Fetch</Link>
                         </Menu.Item>
+                        <Menu.Item key="15">
+                            <Link to="/home">modalantdmove</Link>
+                        </Menu.Item>
                     </SubMenu>
                     <Menu.Item key="19">
 

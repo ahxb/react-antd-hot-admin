@@ -1,16 +1,21 @@
 .boxdiv{
-  display: flex;
-  border: 1px solid #000;
-  //flex-direction: column;
-  justify-content:center ;
 
-  //align-items:center;
-  flex-wrap: wrap;
-  //align-content:center;
-  div{
-
-    width: 100px;
-    height: 100px;
-    background: red;
-  }
+  //display: flex;
+  //border: 1px solid #000;
+  ////flex-direction: column;
+  //justify-content:center ;
+  //
+  ////align-items:center;
+  //flex-wrap: wrap;
+  ////align-content:center;
+  //div{
+  //
+  //  width: 100px;
+  //  height: 100px;
+  //  background: red;
+  //}
+}
+.ant-modal{
+  position: absolute!important;
+  left:20%
 }
