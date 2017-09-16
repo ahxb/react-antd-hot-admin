@@ -18,47 +18,79 @@ class home extends Component {
         super(props);
         this.state = {
             visible: false,
+            visible2: false,
+            visible3:false,
             mode: 'inline',
         }
     }
 
-    showModal = () => {
+    showModal = (modal) => {
+        console.log(111,modal);
         this.setState({
-            visible: true,
+            [modal]: true,
         });
     }
-    handleOk = (e) => {
+    handleOk = (modal,e) => {
         console.log(e);
         this.setState({
-            visible: false,
+            [modal]: false,
         });
     }
-    handleCancel = (e) => {
-        console.log(e);
+    handleCancel = (modal) => {
+        console.log(modal);
         this.setState({
-            visible: false,
+            [modal]: false,
         });
     }
+    _clcikBtn(){
 
+    }
     render() {
         let logo = '';
 
         return (
             <div className="boxdiv">
-                <Button type="primary" onClick={this.showModal}>Open</Button>
+                <Button type="primary" onClick={this.showModal.bind(this,'visible')}>Open</Button>
                 <Modal
                     title="leo-移动modal"
                     visible={this.state.visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
+                    onOk={this.handleOk.bind(this,'visible')}
+                    onCancel={this.handleCancel.bind(this,'visible')}
                     maskClosable={false}
                     width={500}
                 >
                     <p>Some contents...</p>
                     <p>Some contents...</p>
                     <p>Some contents...</p>
+                    <p><Button onClick={this.showModal.bind(this,'visible2')}>按钮</Button></p>
                 </Modal>
 
+                <Modal
+                    title="leo-移动modal"
+                    visible={this.state.visible2}
+                    onOk={this.handleOk.bind(this,'visible2')}
+                    onCancel={this.handleCancel.bind(this,'visible2')}
+                    maskClosable={false}
+                    width={500}
+                >
+                    <p><Button onClick={this.showModal.bind(this,'visible3')}>按钮</Button></p>
+
+
+                    <div>222222222222</div>
+
+                </Modal>
+
+                <Modal
+                    title="leo-移动modal"
+                    visible={this.state.visible3}
+                    onOk={this.handleOk.bind(this,'visible3')}
+                    onCancel={this.handleCancel.bind(this,'visible3')}
+                    maskClosable={false}
+                    width={500}
+                >
+                    <div>222222222222</div>
+
+                </Modal>
             </div>
         );
     }

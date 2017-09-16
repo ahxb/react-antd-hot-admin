@@ -8,9 +8,10 @@ import { AppContainer } from 'react-hot-loader';
 import configStore from '../views/reducer';
 // import configStore from '../views/badminton/badmintonRedux/reducer';
 
-
+//fetchi请求
 import util from '../utils';
-
+//jq方法
+import '../utils/public.js'
 
 window.UTIL = util;
 
