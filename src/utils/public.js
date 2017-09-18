@@ -3,6 +3,10 @@ $(function () {
 
     //modal 移动
     $(window).on('mousedown',function (e) {
+
+
+
+        if($(e.target).hasClass('ant-modal-header')||$(e.target).hasClass('ant-modal-title')){
         e.preventDefault();
         e.stopPropagation();
 
@@ -15,7 +19,7 @@ $(function () {
             distenceX = e.pageX - positionDiv.left;
             distenceY = e.pageY - positionDiv.top;
 
-            if($(e.target).hasClass('ant-modal-header')||$(e.target).hasClass('ant-modal-title')){
+
                 $(window).on('mousemove',function(ent){
 
                     let x = ent.pageX-distenceX;
